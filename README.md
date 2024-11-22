@@ -1,8 +1,21 @@
-# Validation Expressions Cheat Sheet
+# Validation Expressions Cheat Sheet <!-- omit in toc -->
 
 The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values. 
 
 The new feature also comes with an option to write a specific error text with each field. Validations can also be triggered from inside of scripts and event handlers and the error text can be re-defined as needed. This means we can craft error messages that help users understand what values are needed to get rid of the error. 
+
+## Contents <!-- omit in toc -->
+- [Required fields indicator \*](#required-fields-indicator-)
+- [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
+- [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
+- [IsEmail  (TextBoxes)](#isemail--textboxes)
+- [IsAmount  (TextBoxes)](#isamount--textboxes)
+- [IsNumber  (TextBoxes)](#isnumber--textboxes)
+- [Date Range (DatePicker)](#date-range-datepicker)
+- [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
+- [IsURL (TextBoxes)](#isurl-textboxes)
+- [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
+- [IsPassword (TextBoxes)](#ispassword-textboxes)
 
 ## Required fields indicator *
 To append a * to a form field, add the class "required-indicator" to the classes list of the control
