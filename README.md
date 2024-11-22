@@ -36,6 +36,8 @@ DropDown.SelectedOption.value
 RadioButtonList.SelectedOption.value
 ```
 
+![](images/required-validation-textbox.png)
+
 ## Required List Selections (CheckBoxLists)
 ```javascript
 CheckBoxList.SelectedOptions.length > 0
