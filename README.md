@@ -1,6 +1,8 @@
 # Validation Expressions Cheat Sheet
 
-The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values. The new feature also comes with an optiont to write a specific error text with each field. Validations can also be triggered from inside of scripts and event handlers and the error text can be re-defined as needed. This means we can craft error messages that help users understand what values are needed to get rid of the error. 
+The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values. 
+
+The new feature also comes with an option to write a specific error text with each field. Validations can also be triggered from inside of scripts and event handlers and the error text can be re-defined as needed. This means we can craft error messages that help users understand what values are needed to get rid of the error. 
 
 ## Required fields indicator *
 To append a * to a form field, add the class "required-indicator" to the classes list of the control
