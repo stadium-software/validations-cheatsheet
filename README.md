@@ -11,8 +11,8 @@ The new feature also comes with an option to write a specific error text with ea
 - [IsEmail  (TextBoxes)](#isemail--textboxes)
 - [IsAmount  (TextBoxes)](#isamount--textboxes)
 - [IsNumber  (TextBoxes)](#isnumber--textboxes)
-- [Date Range (DatePicker)](#date-range-datepicker)
 - [IsURL (TextBoxes)](#isurl-textboxes)
+- [Date Range (DatePicker)](#date-range-datepicker)
 - [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
 - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
 - [IsPassword (TextBoxes)](#ispassword-textboxes)
@@ -65,12 +65,6 @@ TextBox.Text && TextBox.Text.toLowerCase().match(/^\d+$/)
 !TextBox.Text || TextBox.Text.toLowerCase().match(/^\d+$/)
 ```
 
-## Date Range (DatePicker)
-**Required & date between Jan 1, 2023 & today**
-```javascript
-DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
-```
-
 ## IsURL (TextBoxes)
 **Required & with http / https**
 ```javascript
@@ -80,6 +74,17 @@ TextBox.Text && TextBox.Text.toLowerCase().match(/https?:\/\/(www\.)?[-a-zA-Z0-9
 **Required & without http / https**
 ```javascript
 TextBox.Text && TextBox.Text.toLowerCase().match(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/)
+```
+
+## Date Range (DatePicker)
+**Required & date between Jan 1, 2023 & today**
+```javascript
+DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+```
+
+**Not required & date between Jan 1, 2023 & today**
+```javascript
+!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
 ```
 
 ## OnlyCharacters (TextBoxes)
