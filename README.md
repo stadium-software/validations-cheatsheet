@@ -20,17 +20,6 @@ RadioButtonList.SelectedOption.value
 CheckBoxList.SelectedOptions.length > 0
 ```
 
-## TextLength at least 8 (TextBoxes)
-**Required**
-```javascript
-TextBox.Text && TextBox.Text.length > 7
-```
-
-**Not required**
-```javascript
-!TextBox.Text || TextBox.Text.length > 7
-```
-
 ## IsEmail  (TextBoxes)
 **Required**
 ```javascript
@@ -86,6 +75,17 @@ TextBox.Text && TextBox.Text.toLowerCase().match(/https?:\/\/(www\.)?[-a-zA-Z0-9
 **Required & without http / https**
 ```javascript
 TextBox.Text && TextBox.Text.toLowerCase().match(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/)
+```
+
+## TextLength at least 8 (TextBoxes)
+**Required**
+```javascript
+TextBox.Text && TextBox.Text.length > 7
+```
+
+**Not required**
+```javascript
+!TextBox.Text || TextBox.Text.length > 7
 ```
 
 ## IsPassword (TextBoxes)
