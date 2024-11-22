@@ -22,7 +22,7 @@ To append a * to a form field, add the class "required-indicator" to the classes
 
 **View**
 
-![](images/required-indicator-view.png)
+![](images/required-inicator-view.png)
 
 **Properties Panel Class**
 
