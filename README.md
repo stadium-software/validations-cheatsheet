@@ -21,9 +21,11 @@ The new feature also comes with an option to write a specific error text with ea
 To append a * to a form field, add the class "required-indicator" to the classes list of the control
 
 **View**
+
 ![](images/required-indicator-view.png)
 
 **Properties Panel Class**
+
 ![](images/required-indicator-properties-panel.png)
 
 ## Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
