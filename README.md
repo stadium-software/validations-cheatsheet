@@ -43,7 +43,9 @@ TextBox.Text && TextBox.Text.toLowerCase().match(/^\d+(\.\d{1,2})?$/)
 ```
 ## IsNumber  (TextBoxes)
 **Required**
+```javascript
 TextBox.Text && TextBox.Text.toLowerCase().match(/^\d+$/)
+```
 
 **Not required**
 ```javascript
