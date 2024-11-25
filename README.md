@@ -5,9 +5,12 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 This readme contains expressions that you can use to perform all validations Stadium currently provides out-of-the-box as well as a few additional ones. 
 
 ## Contents <!-- omit in toc -->
-- [Required fields indicator \*](#required-fields-indicator-)
-- [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
-- [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
+- [Required](#required)
+  - [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
+  - [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
+  - [Required fields indicator \*](#required-fields-indicator-)
+- [Not required](#not-required)
+- [Regular Expressions](#regular-expressions)
 - [IsEmail  (TextBoxes)](#isemail--textboxes)
 - [IsAmount  (TextBoxes)](#isamount--textboxes)
 - [IsNumber  (TextBoxes)](#isnumber--textboxes)
@@ -17,7 +20,31 @@ This readme contains expressions that you can use to perform all validations Sta
 - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
 - [IsPassword (TextBoxes)](#ispassword-textboxes)
 
-## Required fields indicator *
+## Required
+By default the "IsValid Rule" property does not validate any control property. 
+
+### Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
+When a string property is required, our "IsValid Rule" can simply reference to the property we are validating. JavaScript will return *false* when there is no value or when the result is null and undefined. 
+
+**Required Strings Examples**
+```javascript
+TextBox.Text
+DatePicker.Date
+DropDown.SelectedOption.value
+RadioButtonList.SelectedOption.value
+```
+
+![](images/required-validation-textbox.png)
+
+### Required List Selections (CheckBoxLists)
+When a selection from a List is required, we can check the length of the selected options list.
+
+**Required List Example**
+```javascript
+CheckBoxList.SelectedOptions.length > 0
+```
+
+### Required fields indicator *
 To append a * to a form field, add the class "required-indicator" to the classes list of the control
 
 **Properties Panel Class**
@@ -28,20 +55,17 @@ To append a * to a form field, add the class "required-indicator" to the classes
 
 ![](images/required-inicator-view.png)
 
-## Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
+## Not required
+If a field is not required, but optionally provided values must conform to a specific format, then our "IsValid Rule" should return true in two instances:
+1. If the property is empty, null or undefined OR 
+2. If the property conforms to the required format
+
+**Not required Example**
 ```javascript
-TextBox.Text
-DatePicker.Date
-DropDown.SelectedOption.value
-RadioButtonList.SelectedOption.value
+!TextBox.Text
 ```
 
-![](images/required-validation-textbox.png)
-
-## Required List Selections (CheckBoxLists)
-```javascript
-CheckBoxList.SelectedOptions.length > 0
-```
+## Regular Expressions
 
 ## IsEmail  (TextBoxes)
 **Required**
@@ -83,7 +107,7 @@ TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0
 
 **Required & without http / https**
 ```javascript
-TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(TextBox.Text)
+TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
 ## Date Range (DatePicker)
@@ -120,7 +144,7 @@ TextBox.Text && TextBox.Text.length > 7
 ```
 
 ## IsPassword (TextBoxes)
-**Required & Rules: 8 – 16 characters, at least one number, at least one special character**
+**Rules: 8 – 16 characters, at least one number, at least one special character**
 ```javascript
 TextBox.Text && /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/.test(TextBox.Text)
 ```
