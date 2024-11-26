@@ -10,9 +10,9 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [Required field indicator \*](#required-field-indicator-)
   - [Not required](#not-required)
 - [Regular Expressions](#regular-expressions)
-  - [IsEmail  (TextBoxes)](#isemail--textboxes)
-  - [IsAmount  (TextBoxes)](#isamount--textboxes)
-  - [IsNumber  (TextBoxes)](#isnumber--textboxes)
+  - [IsEmail](#isemail)
+  - [IsAmount](#isamount)
+  - [IsNumber](#isnumber)
   - [IsURL (TextBoxes)](#isurl-textboxes)
   - [OnlyCharacters](#onlycharacters)
   - [Text length is 8 or more](#text-length-is-8-or-more)
@@ -76,7 +76,7 @@ In this case, two expressions must be combined with a double-pipe (OR). The firs
 ## Regular Expressions
 A wide range of string validations can be performed using regular expressions
 
-### IsEmail  (TextBoxes)
+### IsEmail
 **Required**
 ```javascript
 TextBox.Text && /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
@@ -87,7 +87,7 @@ TextBox.Text && /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((
 !TextBox.Text || /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
 ```
 
-### IsAmount  (TextBoxes)
+### IsAmount
 **Required**
 ```javascript
 TextBox.Text && /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
@@ -97,7 +97,7 @@ TextBox.Text && /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```javascript
 !TextBox.Text || /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```
-### IsNumber  (TextBoxes)
+### IsNumber
 **Required**
 ```javascript
 TextBox.Text && /^\d+$/.test(TextBox.Text)
