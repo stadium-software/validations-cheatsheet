@@ -9,14 +9,15 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [Required fields indicator \*](#required-fields-indicator-)
   - [Not required](#not-required)
 - [Regular Expressions](#regular-expressions)
-- [IsEmail  (TextBoxes)](#isemail--textboxes)
-- [IsAmount  (TextBoxes)](#isamount--textboxes)
-- [IsNumber  (TextBoxes)](#isnumber--textboxes)
-- [IsURL (TextBoxes)](#isurl-textboxes)
-- [Date Range (DatePicker)](#date-range-datepicker)
-- [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
-- [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
-- [IsPassword (TextBoxes)](#ispassword-textboxes)
+  - [IsEmail  (TextBoxes)](#isemail--textboxes)
+  - [IsAmount  (TextBoxes)](#isamount--textboxes)
+  - [IsNumber  (TextBoxes)](#isnumber--textboxes)
+  - [IsURL (TextBoxes)](#isurl-textboxes)
+- [Extended Examples](#extended-examples)
+  - [Date Range (DatePicker)](#date-range-datepicker)
+  - [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
+  - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
+  - [IsPassword (TextBoxes)](#ispassword-textboxes)
 
 ## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
@@ -66,7 +67,7 @@ If a field is not required, but optionally provided values must conform to a spe
 
 ## Regular Expressions
 
-## IsEmail  (TextBoxes)
+### IsEmail  (TextBoxes)
 **Required**
 ```javascript
 TextBox.Text && /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
@@ -77,7 +78,7 @@ TextBox.Text && /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((
 !TextBox.Text || /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
 ```
 
-## IsAmount  (TextBoxes)
+### IsAmount  (TextBoxes)
 **Required**
 ```javascript
 TextBox.Text && /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
@@ -87,7 +88,7 @@ TextBox.Text && /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```javascript
 !TextBox.Text || /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```
-## IsNumber  (TextBoxes)
+### IsNumber  (TextBoxes)
 **Required**
 ```javascript
 TextBox.Text && /^\d+$/.test(TextBox.Text)
@@ -98,7 +99,7 @@ TextBox.Text && /^\d+$/.test(TextBox.Text)
 !TextBox.Text || /^\d+$/.test(TextBox.Text)
 ```
 
-## IsURL (TextBoxes)
+### IsURL (TextBoxes)
 **Required & with http / https**
 ```javascript
 TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
@@ -109,7 +110,9 @@ TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0
 TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
-## Date Range (DatePicker)
+## Extended Examples
+
+### Date Range (DatePicker)
 **Required & date between Jan 1, 2023 & today**
 ```javascript
 DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
@@ -120,7 +123,7 @@ DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date <
 !DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
 ```
 
-## OnlyCharacters (TextBoxes)
+### OnlyCharacters (TextBoxes)
 **Required**
 ```javascript
 TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
@@ -131,7 +134,7 @@ TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-## TextLength at least 8 (TextBoxes)
+### TextLength at least 8 (TextBoxes)
 **Required**
 ```javascript
 TextBox.Text && TextBox.Text.length > 7
@@ -142,7 +145,7 @@ TextBox.Text && TextBox.Text.length > 7
 !TextBox.Text || TextBox.Text.length > 7
 ```
 
-## IsPassword (TextBoxes)
+### IsPassword (TextBoxes)
 **Rules: 8 – 16 characters, at least one number, at least one special character**
 ```javascript
 TextBox.Text && /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/.test(TextBox.Text)
