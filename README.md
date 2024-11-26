@@ -23,7 +23,12 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 By default the "IsValid Rule" property does not validate any control property. 
 
 ### Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
-When a string property is required, our "IsValid Rule" can simply reference to the property we are validating. JavaScript will return *false* when there is no value or when the result is null and undefined. 
+When a string property is required, an "IsValid Rule" can simply reference the property to be validated. JavaScript will return *false* when there is no value or when the result is null and undefined. 
+
+**Format**
+```javascript
+ControlName.PropertyName
+```
 
 **Required Strings Examples**
 ```javascript
