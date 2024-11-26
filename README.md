@@ -66,6 +66,7 @@ If a field is not required, but optionally provided values must conform to a spe
 ```
 
 ## Regular Expressions
+A wide range of string validations can be performed using regular expressions
 
 ### IsEmail  (TextBoxes)
 **Required**
