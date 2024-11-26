@@ -13,7 +13,7 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [IsEmail](#isemail)
   - [IsAmount](#isamount)
   - [IsNumber](#isnumber)
-  - [IsURL (TextBoxes)](#isurl-textboxes)
+  - [IsURL](#isurl)
   - [OnlyCharacters](#onlycharacters)
   - [Text length is 8 or more](#text-length-is-8-or-more)
   - [Password validation](#password-validation)
@@ -108,7 +108,7 @@ TextBox.Text && /^\d+$/.test(TextBox.Text)
 !TextBox.Text || /^\d+$/.test(TextBox.Text)
 ```
 
-### IsURL (TextBoxes)
+### IsURL
 **Required & with http / https**
 ```javascript
 TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
