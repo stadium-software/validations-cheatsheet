@@ -5,11 +5,11 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 This readme contains expressions that you can use to perform all validations Stadium currently provides out-of-the-box as well as a few additional ones. 
 
 ## Contents <!-- omit in toc -->
-- [Required](#required)
+- [Required / Not Required](#required--not-required)
   - [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
   - [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
   - [Required fields indicator \*](#required-fields-indicator-)
-- [Not required](#not-required)
+  - [Not required](#not-required)
 - [Regular Expressions](#regular-expressions)
 - [IsEmail  (TextBoxes)](#isemail--textboxes)
 - [IsAmount  (TextBoxes)](#isamount--textboxes)
@@ -20,7 +20,7 @@ This readme contains expressions that you can use to perform all validations Sta
 - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
 - [IsPassword (TextBoxes)](#ispassword-textboxes)
 
-## Required
+## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
 
 ### Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
@@ -55,7 +55,7 @@ To append a * to a form field, add the class "required-indicator" to the classes
 
 ![](images/required-inicator-view.png)
 
-## Not required
+### Not required
 If a field is not required, but optionally provided values must conform to a specific format, then our "IsValid Rule" should return true in two instances, if:
 1. The property value is empty, null or undefined
    OR ( || )
