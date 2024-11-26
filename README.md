@@ -14,17 +14,17 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [IsAmount  (TextBoxes)](#isamount--textboxes)
   - [IsNumber  (TextBoxes)](#isnumber--textboxes)
   - [IsURL (TextBoxes)](#isurl-textboxes)
-- [Extended Examples](#extended-examples)
-  - [Date Range (DatePicker)](#date-range-datepicker)
   - [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
   - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
   - [IsPassword (TextBoxes)](#ispassword-textboxes)
+- [Date Validations](#date-validations)
+  - [Date Range (DatePicker)](#date-range-datepicker)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
 
 ## Required / Not Required
-By default the "IsValid Rule" property does not validate any control property. 
+By default no control properties are validated. 
 
 ### Required TextBox, DatePicker, DropDown & RadioButtonList (Strings)
 When a string property is required, the "IsValid Rule" can simply reference the property to be validated. JavaScript will return *false* when the property contains no value and when the property is null or undefined.
@@ -119,19 +119,6 @@ TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0
 TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
-## Extended Examples
-
-### Date Range (DatePicker)
-**Required & date between Jan 1, 2023 & today**
-```javascript
-DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
-```
-
-**Not required & date between Jan 1, 2023 & today**
-```javascript
-!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
-```
-
 ### OnlyCharacters (TextBoxes)
 **Required**
 ```javascript
@@ -159,3 +146,17 @@ TextBox.Text && TextBox.Text.length > 7
 ```javascript
 TextBox.Text && /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/.test(TextBox.Text)
 ```
+
+## Date Validations
+
+### Date Range (DatePicker)
+**Required & date between Jan 1, 2023 & today**
+```javascript
+DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+```
+
+**Not required & date between Jan 1, 2023 & today**
+```javascript
+!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+```
+
