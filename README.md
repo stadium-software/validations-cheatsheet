@@ -5,9 +5,9 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 ## Contents <!-- omit in toc -->
 - [Stadium Version](#stadium-version)
 - [Required / Not Required](#required--not-required)
-  - [Required TextBoxes, DatePickers, DropDowns \& RadioButtonLists (Strings)](#required-textboxes-datepickers-dropdowns--radiobuttonlists-strings)
-  - [Required CheckBoxLists (List Selections)](#required-checkboxlists-list-selections)
-  - [Required fields indicator \*](#required-fields-indicator-)
+  - [Required TextBox, DatePicker, DropDown \& RadioButtonList (Strings)](#required-textbox-datepicker-dropdown--radiobuttonlist-strings)
+  - [Required CheckBoxList (List Selection)](#required-checkboxlist-list-selection)
+  - [Required field indicator \*](#required-field-indicator-)
   - [Not required](#not-required)
 - [Regular Expressions](#regular-expressions)
   - [IsEmail  (TextBoxes)](#isemail--textboxes)
@@ -26,7 +26,7 @@ Stadium 6.12+
 ## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
 
-### Required TextBoxes, DatePickers, DropDowns & RadioButtonLists (Strings)
+### Required TextBox, DatePicker, DropDown & RadioButtonList (Strings)
 When a string property is required, an "IsValid Rule" can simply reference the property to be validated. JavaScript will return *false* when there is no value or when the result is null and undefined. 
 
 **Format**
@@ -44,7 +44,7 @@ RadioButtonList.SelectedOption.value
 
 ![](images/required-validation-textbox.png)
 
-### Required CheckBoxLists (List Selections)
+### Required CheckBoxList (List Selection)
 When a selection from a List is required, we can check the length of the selected options list.
 
 **Required List Example**
@@ -52,7 +52,7 @@ When a selection from a List is required, we can check the length of the selecte
 CheckBoxList.SelectedOptions.length > 0
 ```
 
-### Required fields indicator *
+### Required field indicator *
 To append a * to a form field, add the class "required-indicator" to the classes list of the control
 
 **Properties Panel Class**
