@@ -66,7 +66,7 @@ To append a * to a form field, add the class "required-indicator" to the classes
 ### Not required
 If a field is not required, but optionally provided values must conform to a specific format, then it is necessary to craft an expression that returns true when:
 1. The property value is empty, null or undefined
-2. The property conforms to the required format
+2. The property value conforms to a specific format
 
 In this case, two expressions must be combined with a double-pipe (OR). The first expression returns true if there is no value, and the second expression returns true if there is a value that conforms to a required format. For example:
 ```javascript
@@ -159,4 +159,3 @@ DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date <
 ```javascript
 !DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
 ```
-
