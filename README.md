@@ -1,8 +1,6 @@
 # Validation Expressions Cheat Sheet <!-- omit in toc -->
 
-The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values, write a specific error text with each validation and trigger validations from inside of scripts and event handlers. 
-
-This readme contains expressions to replace all validations currently built into the field validations checkbox list in Stadium. 
+The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values. This readme contains expressions to replace all validations currently built into the field validations checkbox list in Stadium. 
 
 ## Contents <!-- omit in toc -->
 - [Required / Not Required](#required--not-required)
