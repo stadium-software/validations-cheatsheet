@@ -64,12 +64,11 @@ To append a * to a form field, add the class "required-indicator" to the classes
 ![](images/required-inicator-view.png)
 
 ### Not required
-If a field is not required, but optionally provided values must conform to a specific format, then our "IsValid Rule" should return true in two instances, if:
+If a field is not required, but optionally provided values must conform to a specific format, then it is necessary to craft an expression that returns true when:
 1. The property value is empty, null or undefined
-   OR ( || )
-2. If the property conforms to the required format
+2. The property conforms to the required format
 
-**Example Expression: returns true if the value is empty, null or undefined OR the value length exceeds 8 characters**
+In this case, two expressions must be combined with a double-pipe (OR). The first expression returns true if there is no value, and the second expression returns true if there is a value that conforms to a required format. For example:
 ```javascript
 !TextBox.Text || TextBox.Text.length > 8
 ```
