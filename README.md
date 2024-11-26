@@ -14,9 +14,9 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [IsAmount  (TextBoxes)](#isamount--textboxes)
   - [IsNumber  (TextBoxes)](#isnumber--textboxes)
   - [IsURL (TextBoxes)](#isurl-textboxes)
-  - [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
-  - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
-  - [IsPassword (TextBoxes)](#ispassword-textboxes)
+  - [OnlyCharacters](#onlycharacters)
+  - [Text length is 8 or more](#text-length-is-8-or-more)
+  - [Password validation](#password-validation)
 - [Date Validations](#date-validations)
   - [Date Range (DatePicker)](#date-range-datepicker)
 
@@ -119,7 +119,7 @@ TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0
 TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
-### OnlyCharacters (TextBoxes)
+### OnlyCharacters
 **Required**
 ```javascript
 TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
@@ -130,7 +130,7 @@ TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-### TextLength at least 8 (TextBoxes)
+### Text length is 8 or more
 **Required**
 ```javascript
 TextBox.Text && TextBox.Text.length > 7
@@ -141,7 +141,7 @@ TextBox.Text && TextBox.Text.length > 7
 !TextBox.Text || TextBox.Text.length > 7
 ```
 
-### IsPassword (TextBoxes)
+### Password validation
 **Rules: 8 – 16 characters, at least one number, at least one special character**
 ```javascript
 TextBox.Text && /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/.test(TextBox.Text)
