@@ -5,8 +5,8 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 ## Contents <!-- omit in toc -->
 - [Stadium Version](#stadium-version)
 - [Required / Not Required](#required--not-required)
-  - [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
-  - [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
+  - [Required TextBoxes, DatePickers, DropDowns \& RadioButtonLists (Strings)](#required-textboxes-datepickers-dropdowns--radiobuttonlists-strings)
+  - [Required CheckBoxLists (List Selections)](#required-checkboxlists-list-selections)
   - [Required fields indicator \*](#required-fields-indicator-)
   - [Not required](#not-required)
 - [Regular Expressions](#regular-expressions)
@@ -26,7 +26,7 @@ Stadium 6.12+
 ## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
 
-### Required Strings (TextBoxes, DatePickers, DropDowns & RadioButtonLists)
+### Required TextBoxes, DatePickers, DropDowns & RadioButtonLists (Strings)
 When a string property is required, an "IsValid Rule" can simply reference the property to be validated. JavaScript will return *false* when there is no value or when the result is null and undefined. 
 
 **Format**
@@ -44,7 +44,7 @@ RadioButtonList.SelectedOption.value
 
 ![](images/required-validation-textbox.png)
 
-### Required List Selections (CheckBoxLists)
+### Required CheckBoxLists (List Selections)
 When a selection from a List is required, we can check the length of the selected options list.
 
 **Required List Example**
