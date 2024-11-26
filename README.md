@@ -3,6 +3,7 @@
 The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate field values. This readme contains expressions to replace all validations currently built into the field validations checkbox list in Stadium. 
 
 ## Contents <!-- omit in toc -->
+- [Stadium Version](#stadium-version)
 - [Required / Not Required](#required--not-required)
   - [Required Strings (TextBoxes, DatePickers, DropDowns \& RadioButtonLists)](#required-strings-textboxes-datepickers-dropdowns--radiobuttonlists)
   - [Required List Selections (CheckBoxLists)](#required-list-selections-checkboxlists)
@@ -18,6 +19,9 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [OnlyCharacters (TextBoxes)](#onlycharacters-textboxes)
   - [TextLength at least 8 (TextBoxes)](#textlength-at-least-8-textboxes)
   - [IsPassword (TextBoxes)](#ispassword-textboxes)
+
+## Stadium Version
+Stadium 6.12+
 
 ## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
