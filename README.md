@@ -21,7 +21,7 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [IsPassword (TextBoxes)](#ispassword-textboxes)
 
 ## Stadium Version
-Stadium 6.12+
+Ths readme applies to Stadium versions 6.12+
 
 ## Required / Not Required
 By default the "IsValid Rule" property does not validate any control property. 
