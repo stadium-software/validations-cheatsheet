@@ -68,7 +68,7 @@ If a field is not required, but optionally provided values must conform to a spe
 1. The property value is empty, null or undefined
 2. The property value conforms to a specific format
 
-In this case, two expressions must be combined with a double-pipe (OR). The first expression returns true if there is no value, and the second expression returns true if there is a value that conforms to a required format. For example:
+In this case, two expressions must be combined with a double-pipe (OR). The first expression is true if there is no value, and the second expression is true if there is a value in the required format. For example:
 ```javascript
 !TextBox.Text || TextBox.Text.length > 8
 ```
