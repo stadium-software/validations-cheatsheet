@@ -64,7 +64,7 @@ To append a * to a form field, add the class "required-indicator" to the classes
 ![](images/required-inicator-view.png)
 
 ### Not required
-If a field is not required, but optionally provided values must conform to a specific format, then it is necessary to craft an expression that returns true when:
+If a field is not required, but optionally provided values must conform to a specific format, then the expression must be true when either:
 1. The property value is empty, null or undefined
 2. The property value conforms to a specific format
 
