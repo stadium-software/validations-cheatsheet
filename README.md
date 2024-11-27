@@ -82,67 +82,67 @@ Required
 TextBox.Text && /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
 ```
 
-**Not required**
+Not required
 ```javascript
 !TextBox.Text || /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
 ```
 
 ### IsAmount
-**Required**
+Required
 ```javascript
 TextBox.Text && /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```
 
-**Not required**
+Not required
 ```javascript
 !TextBox.Text || /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```
 ### IsNumber
-**Required**
+Required
 ```javascript
 TextBox.Text && /^\d+$/.test(TextBox.Text)
 ```
 
-**Not required**
+Not required
 ```javascript
 !TextBox.Text || /^\d+$/.test(TextBox.Text)
 ```
 
 ### IsURL
-**Required & with http / https**
+Required & with http / https
 ```javascript
 TextBox.Text && /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
-**Required & without http / https**
+Required & without http / https
 ```javascript
 TextBox.Text && /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
 
 ### Text length is 8 or more
-**Required**
+Required
 ```javascript
 TextBox.Text && TextBox.Text.length > 7
 ```
 
-**Not required**
+Not required
 ```javascript
 !TextBox.Text || TextBox.Text.length > 7
 ```
 
 ### Password validation
-**Rules: 8 – 16 characters, at least one number, at least one special character**
+Rules: 8 – 16 characters, at least one number, at least one special character
 ```javascript
 TextBox.Text && /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/.test(TextBox.Text)
 ```
 
 ### Characters only
-**Required**
+Required
 ```javascript
 TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-**Not required**
+Not required
 ```javascript
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
@@ -150,12 +150,12 @@ TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
 ## Date Validations
 
 ### Date Range (DatePicker)
-**Required & date between Jan 1, 2023 & today**
+Required & date between Jan 1, 2023 & today
 ```javascript
 DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
 ```
 
-**Not required & date between Jan 1, 2023 & today**
+Not required & date between Jan 1, 2023 & yesterday
 ```javascript
-!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < dayjs(new Date()).add(-1, 'day')
 ```
