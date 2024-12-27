@@ -2,7 +2,7 @@
 
 The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
 
-This readme contains expressions to replace all validations currently built into the field validations checkbox list in Stadium. 
+This readme describes how to implement validations currently built into the field validations checkbox list in Stadium and how to add a number of other validations. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
 ## Contents <!-- omit in toc -->
 - [Stadium Version](#stadium-version)
