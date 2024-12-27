@@ -19,6 +19,7 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [Characters only](#characters-only)
 - [Date Validations](#date-validations)
   - [Date Range (DatePicker)](#date-range-datepicker)
+- [Generate any RegEx](#generate-any-regex)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -158,4 +159,19 @@ DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date <
 Not required & date between Jan 1, 2023 & yesterday
 ```javascript
 !DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < dayjs(new Date()).add(-1, 'day')
+```
+
+## Generate any RegEx
+If you need a specific RegEx, but are not sure hwo to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
+
+[Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
+
+Here is an example prompt for a complex RegEx:
+
+```text
+Give me a JavaScript regex that checks a string for the following:
+The string must have 8-24 characters.
+The string must contain upper and lowercase characters.
+The string must contain at least one number.
+The string must have at least one of the following special characters: ~!@#$%^&*()_+=-:;<,>.?
 ```
