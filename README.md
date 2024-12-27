@@ -1,6 +1,6 @@
 # Validation Expressions Cheat Sheet <!-- omit in toc -->
 
-The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
+The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a limited set of predefined options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
 
 This readme describes how to create validations in Stadium 6.12+. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
