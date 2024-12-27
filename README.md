@@ -20,8 +20,8 @@ This readme describes how to create validations in Stadium 6.12+. When upgrading
     - [Text length is 8 or more](#text-length-is-8-or-more)
     - [Password validation](#password-validation)
     - [Characters only](#characters-only)
-  - [Date Validations](#date-validations)
-    - [Date Range (DatePicker)](#date-range-datepicker)
+- [Date Validations](#date-validations)
+  - [Date Range (DatePicker)](#date-range-datepicker)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -185,9 +185,9 @@ Not required
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-## Date Validations
+# Date Validations
 
-### Date Range (DatePicker)
+## Date Range (DatePicker)
 Required & date between Jan 1, 2023 & today
 ```javascript
 DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
