@@ -5,17 +5,23 @@ The release of Stadium 6.12 brings some changes to how field validations work in
 This readme describes how to create validations in Stadium 6.12+. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
 ## Contents <!-- omit in toc -->
+- [Stadium Version](#stadium-version)
+- [Required / Not Required](#required--not-required)
+  - [Required TextBox, DatePicker, DropDown \& RadioButtonList (Strings)](#required-textbox-datepicker-dropdown--radiobuttonlist-strings)
+  - [Required CheckBoxList (List Selection)](#required-checkboxlist-list-selection)
+  - [Required field indicator \*](#required-field-indicator-)
+  - [Not required](#not-required)
 - [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
-  - [Copy-and-Paste Expressions](#copy-and-paste-expressions)
-    - [IsEmail](#isemail)
-    - [IsAmount](#isamount)
-    - [IsNumber](#isnumber)
-    - [IsURL](#isurl)
-    - [Text length is 8 or more](#text-length-is-8-or-more)
-    - [Password validation](#password-validation)
-    - [Characters only](#characters-only)
-  - [Date Validations](#date-validations)
-    - [Date Range (DatePicker)](#date-range-datepicker)
+- [Copy-and-Paste Expressions](#copy-and-paste-expressions)
+  - [IsEmail](#isemail)
+  - [IsAmount](#isamount)
+  - [IsNumber](#isnumber)
+  - [IsURL](#isurl)
+  - [Text length is 8 or more](#text-length-is-8-or-more)
+  - [Password validation](#password-validation)
+  - [Characters only](#characters-only)
+- [Date Validations](#date-validations)
+  - [Date Range (DatePicker)](#date-range-datepicker)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -70,7 +76,7 @@ In this case, two expressions must be combined with a double-pipe (OR). The firs
 !TextBox.Text || TextBox.Text.length > 8
 ```
 
-# Use AI to generate a RegEx
+## Use AI to generate a RegEx
 A wide range of string validations can be performed using regular expressions, but regular expressions are not always easy to write. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
 
 [Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
