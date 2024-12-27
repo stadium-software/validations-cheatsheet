@@ -2,26 +2,20 @@
 
 The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a predefined set of limited options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
 
-This readme describes how to implement validations currently built into the field validations checkbox list in Stadium and how to add a number of other validations. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
+This readme describes how to create validations in Stadium 6.12+. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
 ## Contents <!-- omit in toc -->
-- [Stadium Version](#stadium-version)
-- [Required / Not Required](#required--not-required)
-  - [Required TextBox, DatePicker, DropDown \& RadioButtonList (Strings)](#required-textbox-datepicker-dropdown--radiobuttonlist-strings)
-  - [Required CheckBoxList (List Selection)](#required-checkboxlist-list-selection)
-  - [Required field indicator \*](#required-field-indicator-)
-  - [Not required](#not-required)
-- [Regular Expressions](#regular-expressions)
-  - [IsEmail](#isemail)
-  - [IsAmount](#isamount)
-  - [IsNumber](#isnumber)
-  - [IsURL](#isurl)
-  - [Text length is 8 or more](#text-length-is-8-or-more)
-  - [Password validation](#password-validation)
-  - [Characters only](#characters-only)
-  - [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
-- [Date Validations](#date-validations)
-  - [Date Range (DatePicker)](#date-range-datepicker)
+- [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
+  - [Copy-and-Paste Expressions](#copy-and-paste-expressions)
+    - [IsEmail](#isemail)
+    - [IsAmount](#isamount)
+    - [IsNumber](#isnumber)
+    - [IsURL](#isurl)
+    - [Text length is 8 or more](#text-length-is-8-or-more)
+    - [Password validation](#password-validation)
+    - [Characters only](#characters-only)
+  - [Date Validations](#date-validations)
+    - [Date Range (DatePicker)](#date-range-datepicker)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -76,8 +70,40 @@ In this case, two expressions must be combined with a double-pipe (OR). The firs
 !TextBox.Text || TextBox.Text.length > 8
 ```
 
-## Regular Expressions
-A wide range of string validations can be performed using regular expressions
+# Use AI to generate a RegEx
+A wide range of string validations can be performed using regular expressions, but regular expressions are not always easy to write. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
+
+[Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
+
+Here is an example prompt for a complex RegEx:
+
+```text
+Give me a JavaScript regex that checks a string for the following:
+The string must have 8-24 characters.
+The string must contain upper and lowercase characters.
+The string must contain at least one number.
+The string must have at least one of the following special characters: ~!@#$%^&*()_+=-:;<,>.?
+```
+
+The result:
+```javascript
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/
+```
+
+Implementing this as a Stadium Validation:
+
+Required
+```javascript
+TextBox.Text && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
+```
+
+Not required
+```javascript
+!TextBox.Text || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
+```
+
+## Copy-and-Paste Expressions
+Here are some regular expressions you can copy & paste into your applications
 
 ### IsEmail
 Required
@@ -148,38 +174,6 @@ TextBox.Text && /^[a-zA-Z]*$/.test(TextBox.Text)
 Not required
 ```javascript
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
-```
-
-### Use AI to generate a RegEx
-Regular Expressions are hard. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
-
-[Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
-
-Here is an example prompt for a complex RegEx:
-
-```text
-Give me a JavaScript regex that checks a string for the following:
-The string must have 8-24 characters.
-The string must contain upper and lowercase characters.
-The string must contain at least one number.
-The string must have at least one of the following special characters: ~!@#$%^&*()_+=-:;<,>.?
-```
-
-The result:
-```javascript
-/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/
-```
-
-Implementing this as a Stadium Validation:
-
-Required
-```javascript
-TextBox.Text && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
-```
-
-Not required
-```javascript
-!TextBox.Text || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
 ```
 
 ## Date Validations
