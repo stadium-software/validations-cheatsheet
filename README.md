@@ -17,7 +17,7 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [Text length is 8 or more](#text-length-is-8-or-more)
   - [Password validation](#password-validation)
   - [Characters only](#characters-only)
-  - [Generate any RegEx](#generate-any-regex)
+  - [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
 - [Date Validations](#date-validations)
   - [Date Range (DatePicker)](#date-range-datepicker)
 
@@ -148,7 +148,7 @@ Not required
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-### Generate any RegEx
+### Use AI to generate a RegEx
 Regular Expressions are hard. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
 
 [Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
