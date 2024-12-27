@@ -175,3 +175,20 @@ The string must contain upper and lowercase characters.
 The string must contain at least one number.
 The string must have at least one of the following special characters: ~!@#$%^&*()_+=-:;<,>.?
 ```
+
+The result:
+```javascript
+const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/;
+```
+
+Implementing this as a Stadium Validation:
+
+Required
+```javascript
+TextBox.Text && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
+```
+
+Not required
+```javascript
+!TextBox.Text || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
+```
