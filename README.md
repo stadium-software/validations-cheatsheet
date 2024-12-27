@@ -162,7 +162,7 @@ Not required & date between Jan 1, 2023 & yesterday
 ```
 
 ## Generate any RegEx
-If you need a specific RegEx, but are not sure hwo to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
+Regular Expressions are hard. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
 
 [Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
 
