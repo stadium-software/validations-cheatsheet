@@ -17,9 +17,9 @@ The release of Stadium 6.12 brings some changes to how field validations work in
   - [Text length is 8 or more](#text-length-is-8-or-more)
   - [Password validation](#password-validation)
   - [Characters only](#characters-only)
+  - [Generate any RegEx](#generate-any-regex)
 - [Date Validations](#date-validations)
   - [Date Range (DatePicker)](#date-range-datepicker)
-- [Generate any RegEx](#generate-any-regex)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -148,20 +148,7 @@ Not required
 !TextBox.Text || /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-## Date Validations
-
-### Date Range (DatePicker)
-Required & date between Jan 1, 2023 & today
-```javascript
-DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
-```
-
-Not required & date between Jan 1, 2023 & yesterday
-```javascript
-!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < dayjs(new Date()).add(-1, 'day')
-```
-
-## Generate any RegEx
+### Generate any RegEx
 Regular Expressions are hard. If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
 
 [Google AI Studio RegEx Text Prompt](https://aistudio.google.com/app/prompts/regexed)
@@ -192,3 +179,17 @@ Not required
 ```javascript
 !TextBox.Text || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
 ```
+
+## Date Validations
+
+### Date Range (DatePicker)
+Required & date between Jan 1, 2023 & today
+```javascript
+DatePicker.Date && DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+```
+
+Not required & date between Jan 1, 2023 & yesterday
+```javascript
+!DatePicker.Date || DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < dayjs(new Date()).add(-1, 'day')
+```
+
