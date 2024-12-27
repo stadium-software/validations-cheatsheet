@@ -178,7 +178,7 @@ The string must have at least one of the following special characters: ~!@#$%^&*
 
 The result:
 ```javascript
-const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/;
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/
 ```
 
 Implementing this as a Stadium Validation:
