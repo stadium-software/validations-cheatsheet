@@ -26,7 +26,7 @@ This readme describes how to create validations in Stadium 6.12+. When upgrading
 Ths readme applies to Stadium versions 6.12+
 
 # Required / Not Required
-To mark a field as required, check the "Required" checkbox
+To mark a field as required, check the "Required" checkbox and enter a validation message
 
 ![](images/PropertiesPanel-Required.png)
 
@@ -34,7 +34,7 @@ To mark a field as required, check the "Required" checkbox
 A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations
 
 ## Copy-and-Paste Expressions
-Copy & paste these into your application
+Adjust the fieldname ('TextBox' in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
 
 ### IsEmail
 Required
