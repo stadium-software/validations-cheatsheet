@@ -6,7 +6,7 @@ This readme describes how to create validations in Stadium 6.12+. When upgrading
 
 ## Contents <!-- omit in toc -->
 - [Required / Not Required](#required--not-required)
-- [Regular Expressions](#regular-expressions)
+- [IsValid: Regular Expressions](#isvalid-regular-expressions)
   - [Copy-and-Paste Expressions](#copy-and-paste-expressions)
     - [IsEmail](#isemail)
     - [IsAmount](#isamount)
@@ -30,7 +30,7 @@ To mark a field as required, check the "Required" checkbox and enter a validatio
 
 ![](images/PropertiesPanel-Required.png)
 
-# Regular Expressions
+# IsValid: Regular Expressions
 A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations
 
 ## Copy-and-Paste Expressions
