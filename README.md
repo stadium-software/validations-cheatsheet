@@ -32,7 +32,7 @@ Full feature set:
 
 1. Custom validation definition using Javascript expressions
 2. Custom error message definition
-3. Programatic triggering of Control validations
+3. Programatic error state setting
 4. Programatic error message definition
 
 When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
