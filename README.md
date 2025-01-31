@@ -46,17 +46,15 @@ To mark a Control as required, check the "Required" checkbox and enter a validat
 ![](images/PropertiesPanel-Required.png)
 
 # IsValid
-The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to 'false' when it fails "IsValid Rule". It can also be set [programatically in scripts](#setting-isvalid-and-error-texts-in-scripts). 
+The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to "false" when it fails "IsValid Rule". It can also be set [programatically in scripts](#setting-isvalid-and-error-texts-in-scripts). 
 
 ## IsValid Rule
-The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. 
-
-If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
+The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
 
 ## Copy-and-Paste Expressions
 A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations. 
 
-To use these examples, adjust the Controlname ('TextBox' in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
+To use these examples, adjust the Control name ("TextBox" in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
 
 ### IsEmail
 Required
