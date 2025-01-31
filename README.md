@@ -136,13 +136,13 @@ TextBox.Text > 0 && TextBox.Text < 13
 ```
 
 ## Combining criteria
-To require values from one or from multiple Controls to adhere to multiple criteria (x AND y), the criteria can be combined by adding a double ampersand (&&)
+When values from one or from multiple Controls are required to adhere to multiple criteria (x AND y), the criteria can be combined by adding a double ampersand (&&)
 
 ```javascript
 CheckBox.Checked && DatePicker.Date >= new Date('01/01/2023')
 ```
 
-To require values from one or from multiple Controls to adhere to any listed criteria (x OR y), the criteria can be combined by adding a double pipe (||)
+When values from one or from multiple Controls are required to adhere to **any** listed criteria (x OR y), the criteria can be combined by adding a double pipe (||)
 
 ```javascript
 new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).getFullYear() == 2025
