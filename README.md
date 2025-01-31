@@ -150,4 +150,8 @@ new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).get
 
 # Setting IsValid and Error Texts in scripts
 
-Scripts that process Control data are triggered only after all Controls have passed the validation defined in the "IsValid Rule" property. Where necesssary additional validations can then be run and the "IsValid" and Error Text propertiesy can be set for on any Control using *SetValue* action. 
+Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can in such cases also be set programatically. 
+
+Scripts that process Control data are triggered only after all Controls have passed the validation defined in the "IsValid Rule" property. Where necesssary additional validations can then be run and the "IsValid" and Error Text properties can be set for on any Control using *SetValue* action. 
+
+![](images/ScriptValidations.png)
