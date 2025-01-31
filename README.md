@@ -17,10 +17,8 @@ This readme describes how to create validations in Stadium 6.12+.
     - [Password validation](#password-validation)
     - [Characters only](#characters-only)
   - [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
-  - [Date Validations](#date-validations)
-    - [Date Range (DatePicker)](#date-range-datepicker)
-  - [Number Validations](#number-validations)
-    - [Number Range](#number-range)
+  - [Date Range (DatePicker)](#date-range-datepicker)
+  - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
 - [Setting IsValid and Error Texts in scripts](#setting-isvalid-and-error-texts-in-scripts)
 
@@ -119,17 +117,13 @@ Implementing this as a Stadium Validation:
 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
 ```
 
-## Date Validations
-
-### Date Range (DatePicker)
+## Date Range (DatePicker)
 Date between Jan 1, 2023 & today
 ```javascript
 DatePicker.Date >= new Date('01/01/2023') && DatePicker.Date <= new Date()
 ```
 
-## Number Validations
-
-### Number Range
+## Number Range
 Number between 1 and 12
 ```javascript
 TextBox.Text > 0 && TextBox.Text < 13
