@@ -72,7 +72,7 @@ To use these examples, adjust the Control name ("TextBox" in this example) and c
 ```
 
 ### IsURL
-Required & with http / https
+With http / https
 ```javascript
 /https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)/i.test(TextBox.Text)
 ```
@@ -122,7 +122,7 @@ Implementing this as a Stadium Validation:
 ## Date Validations
 
 ### Date Range (DatePicker)
-Required & date between Jan 1, 2023 & today
+Date between Jan 1, 2023 & today
 ```javascript
 DatePicker.Date >= new Date('01/01/2023') && DatePicker.Date <= new Date()
 ```
@@ -130,7 +130,7 @@ DatePicker.Date >= new Date('01/01/2023') && DatePicker.Date <= new Date()
 ## Number Validations
 
 ### Number Range
-Required & number between 1 and 12
+Number between 1 and 12
 ```javascript
 TextBox.Text > 0 && TextBox.Text < 13
 ```
