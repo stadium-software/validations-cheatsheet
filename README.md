@@ -1,17 +1,10 @@
 # Validation Expressions Cheat Sheet <!-- omit in toc -->
 
-The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a limited set of predefined options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
-
-Full feature set:
-
-1. Custom validation definition using Javascript expressions
-2. Custom error message definition
-3. Programatic triggering of field validations
-4. Programatic error message definition
-
-This readme describes how to create validations in Stadium 6.12+. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
+This readme describes how to create validations in Stadium 6.12+. 
 
 ## Contents <!-- omit in toc -->
+- [Overview](#overview)
+  - [Stadium Version](#stadium-version)
 - [Required / Not Required](#required--not-required)
 - [IsValid Rule](#isvalid-rule)
   - [Copy-and-Paste Expressions](#copy-and-paste-expressions)
@@ -29,8 +22,21 @@ This readme describes how to create validations in Stadium 6.12+. When upgrading
   - [Number Range](#number-range)
 - [Combining criteria](#combining-criteria)
 
+# Overview
+
+The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a limited set of predefined options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
+
+Full feature set:
+
+1. Custom validation definition using Javascript expressions
+2. Custom error message definition
+3. Programatic triggering of field validations
+4. Programatic error message definition
+
+When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
+
 ## Stadium Version
-Ths readme applies to Stadium versions 6.12+
+6.12+
 
 # Required / Not Required
 To mark a field as required, check the "Required" checkbox and enter a validation message
