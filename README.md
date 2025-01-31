@@ -15,12 +15,12 @@ This readme describes how to create validations in Stadium 6.12+. When upgrading
     - [Text length is 8 or more](#text-length-is-8-or-more)
     - [Password validation](#password-validation)
     - [Characters only](#characters-only)
-    - [Combining Multiple Criteria](#combining-multiple-criteria)
   - [Use AI to generate a RegEx](#use-ai-to-generate-a-regex)
 - [Date Validations](#date-validations)
   - [Date Range (DatePicker)](#date-range-datepicker)
 - [Number Validations](#number-validations)
   - [Number Range](#number-range)
+- [Combining criteria](#combining-criteria)
 
 ## Stadium Version
 Ths readme applies to Stadium versions 6.12+
@@ -31,10 +31,10 @@ To mark a field as required, check the "Required" checkbox and enter a validatio
 ![](images/PropertiesPanel-Required.png)
 
 # IsValid Rule
-A wide range of validations can be performed with the help of expressions. 
+The "IsValid Rule" property accepts a Javascript expression. When the field value passes the expression the IsValid is true and the field has passed the validation. 
 
 ## Copy-and-Paste Expressions
-However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations. 
+A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations. 
 
 To use these examples, adjust the fieldname ('TextBox' in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
 
@@ -80,21 +80,6 @@ Required
 /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
 
-### Combining Multiple Criteria
-To require values to adhere to multiple criteria (x AND y), the criteria can be combined by adding a double ampersand (&&)
-
-Example
-```javascript
-TextBox.Text > 0 && TextBox.Text < 13
-```
-
-To require values to adhere to any listed criteria (x OR y), the criteria can be combined by adding a double pipe (||)
-
-Example
-```javascript
-TextBox.Text > 0 || TextBox.Text < 13
-```
-
 ## Use AI to generate a RegEx
 If you need a specific RegEx, but are not sure how to write it, I came across a function in the Google Gemini AI tool that will generate a RegEx from a text prompt. 
 
@@ -127,7 +112,7 @@ Required
 ## Date Range (DatePicker)
 Required & date between Jan 1, 2023 & today
 ```javascript
-DatePicker.Date > new Date('01/01/2023') && DatePicker.Date < new Date()
+DatePicker.Date >= new Date('01/01/2023') && DatePicker.Date <= new Date()
 ```
 
 # Number Validations
@@ -137,3 +122,19 @@ Required & number between 1 and 12
 ```javascript
 TextBox.Text > 0 && TextBox.Text < 13
 ```
+
+# Combining criteria
+To require values from one or from multiple fields to adhere to multiple criteria (x AND y), the criteria can be combined by adding a double ampersand (&&)
+
+Example
+```javascript
+CheckBox.Checked && DatePicker.Date >= new Date('01/01/2023')
+```
+
+To require values from one or from multiple fields to adhere to any listed criteria (x OR y), the criteria can be combined by adding a double pipe (||)
+
+Example
+```javascript
+new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).getFullYear() == 2025
+```
+
