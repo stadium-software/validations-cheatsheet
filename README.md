@@ -2,6 +2,13 @@
 
 The release of Stadium 6.12 brings some changes to how field validations work in Stadium. Instead of a simple selection from a limited set of predefined options, we can now use expressions to flexibly validate control values and properties as well as the values and properties of related controls. 
 
+Full feature set:
+
+1. Custom validation definition using Javascript expressions
+2. Custom error message definition
+3. Programatic triggering of field validations
+4. Programatic error message definition
+
 This readme describes how to create validations in Stadium 6.12+. When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
 ## Contents <!-- omit in toc -->
@@ -31,7 +38,9 @@ To mark a field as required, check the "Required" checkbox and enter a validatio
 ![](images/PropertiesPanel-Required.png)
 
 # IsValid Rule
-The "IsValid Rule" property accepts a Javascript expression. When the field value passes the expression the IsValid is true and the field has passed the validation. 
+The "IsValid Rule" property accepts a Javascript expression. If the field value passes the expression the IsValid property is true and the field has passed the validation. 
+
+If the field value does not pass the expression the IsValid property is false, the field is placed in an error state and the error message is displayed under the field. 
 
 ## Copy-and-Paste Expressions
 A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations. 
