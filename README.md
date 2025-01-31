@@ -57,19 +57,16 @@ A wide range of validations can be performed with the help of regular expression
 To use these examples, adjust the Control name ("TextBox" in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
 
 ### IsEmail
-Required
 ```javascript
 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(TextBox.Text)
 ```
 
 ### IsAmount
-Required
 ```javascript
 /^\d+(\.\d{1,2})?$/.test(TextBox.Text)
 ```
 
 ### IsNumber
-Required
 ```javascript
 /^\d+$/.test(TextBox.Text)
 ```
@@ -81,7 +78,6 @@ Required & with http / https
 ```
 
 ### Text length is 8 or more
-Required
 ```javascript
 TextBox.Text.length > 7
 ```
@@ -93,7 +89,6 @@ Rules: 8 – 16 characters, at least one number, at least one special character
 ```
 
 ### Characters only
-Required
 ```javascript
 /^[a-zA-Z]*$/.test(TextBox.Text)
 ```
@@ -120,7 +115,6 @@ The result:
 
 Implementing this as a Stadium Validation:
 
-Required
 ```javascript
 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=-:;<,>.?]).{8,24}$/.test(TextBox.Text)
 ```
