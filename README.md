@@ -6,7 +6,8 @@ This readme describes how to create validations in Stadium 6.12+.
 - [Overview](#overview)
   - [Stadium Version](#stadium-version)
 - [Required / Not Required](#required--not-required)
-- [IsValid Rule](#isvalid-rule)
+- [IsValid](#isvalid)
+  - [IsValid Rule](#isvalid-rule)
   - [Copy-and-Paste Expressions](#copy-and-paste-expressions)
     - [IsEmail](#isemail)
     - [IsAmount](#isamount)
@@ -44,7 +45,10 @@ To mark a Control as required, check the "Required" checkbox and enter a validat
 
 ![](images/PropertiesPanel-Required.png)
 
-# IsValid Rule
+# IsValid
+The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to 'false' when it fails "IsValid Rule". It can also be set [programatically in scripts](#setting-isvalid-and-error-texts-in-scripts). 
+
+## IsValid Rule
 The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. 
 
 If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
