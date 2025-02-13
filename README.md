@@ -150,4 +150,4 @@ If an "IsValid" flag is set to "false", the text provided in the "Error Text" pr
 
 Scripts execute once all controls pass the "IsValid Rules". Script executions do **NOT** stop when an "IsValid" flag is set to "false". 
 
-![](images/ValidationDecision.png)
+![](images/ScriptValidations.png)
