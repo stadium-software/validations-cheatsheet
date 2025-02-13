@@ -148,6 +148,6 @@ Validation errors can be triggered in scripts by setting "IsValid" flags and "Er
 
 If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will remain "false" until it is set to "true" using another *SetValue* action. 
 
-Scripts execute once all controls pass the "IsValid Rules". Script executions do **NOT** stop when an "IsValid" flag is set to "false". Data processing may need to be done only if all controls pass all validations
+Scripts execute once all controls pass the "IsValid Rules". Script executions do **NOT** stop when an "IsValid" flag is set to "false". 
 
 ![](images/ValidationDecision.png)
