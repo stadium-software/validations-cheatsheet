@@ -155,4 +155,4 @@ By default all controls are assumed to be valid and their "IsValid" flag is "tru
 
 First controls that are referenced in Event Handlers must pass "IsValid" rules. Once all controls pass the "IsValid Rules", page scripts are executed. 
 
-In scripts the "IsValid" flag and Error Text can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the script execution is halted and the error text is shown on the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
+In scripts the "IsValid" flag and "Error Text" property can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the script execution is halted and the error text is shown on the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
