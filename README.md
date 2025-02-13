@@ -20,7 +20,7 @@ This readme describes how to create validations in Stadium 6.12+.
   - [Date Range (DatePicker)](#date-range-datepicker)
   - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
-- [Creating Validations in scripts](#creating-validations-in-scripts)
+- [Advanced Validations](#advanced-validations)
   - [Validations Execution Sequence](#validations-execution-sequence)
   - [Setting The "IsValid" Flag](#setting-the-isvalid-flag)
 
@@ -144,7 +144,7 @@ When values from one or from more Controls are required to adhere to **any** lis
 new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).getFullYear() == 2025
 ```
 
-# Creating Validations in scripts
+# Advanced Validations
 
 Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can also be set programatically using a *SetValue* action. 
 
