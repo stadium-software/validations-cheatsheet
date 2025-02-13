@@ -145,14 +145,12 @@ new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).get
 
 # Script-Based Validations
 
-Sometimes validations need to do things that cannot be accomplished in Javascript expressions. To maintain a consistent user experience, control errors can therefor also be set in scripts. Scripts execute once all controls pass the "IsValid Rules". 
-
-![](images/ScriptValidations.png)
+Control errors can also be set in scripts. Scripts execute once all controls pass the "IsValid Rules". 
 
 ## Setting The "IsValid" Flag
 
 The "IsValid" flag and "Error Text" property can be set using *SetValue* actions. If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will remain "false" until it is set to "true" using another *SetValue* action. 
 
-The script execution does **NOT** stop when an "IsValid" flag is set to "false". Data processing that should only happen when all controls are valid must be done inside of a *Decision* action
+Script executions do **NOT** stop when an "IsValid" flag is set to "false". Data processing may need to be done only if all controls pass all validations
 
 ![](images/ValidationDecision.png)
