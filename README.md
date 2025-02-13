@@ -21,7 +21,8 @@ This readme describes how to create validations in Stadium 6.12+.
   - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
 - [Creating Validations in scripts](#creating-validations-in-scripts)
-- [Validations Execution Sequence](#validations-execution-sequence)
+  - [Validations Execution Sequence](#validations-execution-sequence)
+  - [Setting The "IsValid" Flag](#setting-the-isvalid-flag)
 
 # Overview
 
@@ -149,10 +150,16 @@ Sometimes validations need to do things that cannot be accomplished in Javascrip
 
 ![](images/ScriptValidations.png)
 
-# Validations Execution Sequence
+## Validations Execution Sequence
 
 By default all controls are assumed to be valid and their "IsValid" flag is "true". 
 
 First controls that are referenced in Event Handlers must pass "IsValid" rules. Once all controls pass the "IsValid Rules", page scripts are executed. 
 
-In scripts the "IsValid" flag and "Error Text" property can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the script execution is halted and the error text is shown on the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
+## Setting The "IsValid" Flag
+
+In scripts the "IsValid" flag and "Error Text" property can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
+
+The script execution does **NOT** stop when an "IsValid" flag is set to "false". Any data processing that should only happen when all controls are valid must be done inside of a *Decision* action
+
+![](images/ValidationDecision.png)
