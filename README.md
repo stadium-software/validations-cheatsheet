@@ -20,8 +20,8 @@ This readme describes how to create validations in Stadium 6.12+.
   - [Date Range (DatePicker)](#date-range-datepicker)
   - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
+- [Validations Execution Sequence](#validations-execution-sequence)
 - [Advanced Validations](#advanced-validations)
-  - [Validations Execution Sequence](#validations-execution-sequence)
   - [Setting The "IsValid" Flag](#setting-the-isvalid-flag)
 
 # Overview
@@ -144,17 +144,17 @@ When values from one or from more Controls are required to adhere to **any** lis
 new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).getFullYear() == 2025
 ```
 
+# Validations Execution Sequence
+
+By default all controls are assumed to be valid and their "IsValid" flag is "true". 
+
+First controls that are referenced in Event Handlers must pass "IsValid" rules. Once all controls pass the "IsValid Rules", page scripts are executed. 
+
 # Advanced Validations
 
 Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can also be set programatically using a *SetValue* action. 
 
 ![](images/ScriptValidations.png)
-
-## Validations Execution Sequence
-
-By default all controls are assumed to be valid and their "IsValid" flag is "true". 
-
-First controls that are referenced in Event Handlers must pass "IsValid" rules. Once all controls pass the "IsValid Rules", page scripts are executed. 
 
 ## Setting The "IsValid" Flag
 
