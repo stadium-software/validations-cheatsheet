@@ -152,14 +152,14 @@ First controls that are referenced in Event Handlers must pass "IsValid" rules. 
 
 # Script-Based Validations
 
-Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can also be set programatically using a *SetValue* action. 
+Sometimes validations need to do things that cannot be accomplished in Javascript expressions. To maintain a consistent user experience, control errors can therefor also be set in scripts. 
 
 ![](images/ScriptValidations.png)
 
 ## Setting The "IsValid" Flag
 
-In scripts the "IsValid" flag and "Error Text" property can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
+The "IsValid" flag and "Error Text" property can be set using *SetValue* actions. If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will remain "false" until it is set to "true" using another *SetValue* action. 
 
-The script execution does **NOT** stop when an "IsValid" flag is set to "false". Any data processing that should only happen when all controls are valid must be done inside of a *Decision* action
+The script execution does **NOT** stop when an "IsValid" flag is set to "false". Data processing that should only happen when all controls are valid must be done inside of a *Decision* action
 
 ![](images/ValidationDecision.png)
