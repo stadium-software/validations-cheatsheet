@@ -51,7 +51,7 @@ The "IsValid" property is a boolean flag that defines when Controls are in an er
 The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
 
 ## Copy-and-Paste Expressions
-A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Here are regular expressions for all current Stadium validations. 
+A wide range of validations can be performed with the help of regular expressions. However, regular expressions are not always easy to write. Below are regular expressions for all current Stadium validations. 
 
 To use these examples, adjust the Control name ("TextBox" in this example) and copy & paste any of these expressions into the "IsValid" rule in the properties panel
 
