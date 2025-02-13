@@ -45,7 +45,7 @@ To mark a Control as required, check the "Required" checkbox and enter a validat
 ![](images/PropertiesPanel-Required.png)
 
 # IsValid
-The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to "false" when it fails "IsValid Rule". It can also be set [programmatically in scripts](#creating-validations-in-scripts). 
+The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to "false" when it fails an "IsValid Rule". It can also be set [programmatically in scripts](#creating-validations-in-scripts). 
 
 ## IsValid Rule
 The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
