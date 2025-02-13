@@ -20,7 +20,8 @@ This readme describes how to create validations in Stadium 6.12+.
   - [Date Range (DatePicker)](#date-range-datepicker)
   - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
-- [Control Validations in scripts](#control-validations-in-scripts)
+- [Creating Validations in scripts](#creating-validations-in-scripts)
+- [Validations Execution Sequence](#validations-execution-sequence)
 
 # Overview
 
@@ -142,10 +143,16 @@ When values from one or from more Controls are required to adhere to **any** lis
 new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).getFullYear() == 2025
 ```
 
-# Control Validations in scripts
+# Creating Validations in scripts
 
-Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can in such cases also be set programatically. 
-
-Scripts that process Control data are triggered only after all Controls have passed the validation defined in the "IsValid Rule" property. Where necesssary additional validations can then be run and the "IsValid" and Error Text properties can be set for on any Control using *SetValue* action. 
+Sometimes validations need to do things that cannot be accomplished in Javascript expressions, like a lookup in an external system for example. To maintain a consistent user experience with regard to validation errors, the "IsValid" flag and Error Text can also be set programatically using a *SetValue* action. 
 
 ![](images/ScriptValidations.png)
+
+# Validations Execution Sequence
+
+By default all controls are assumed to be valid and their "IsValid" flag is "true". 
+
+First controls that are referenced in Event Handlers must pass "IsValid" rules. 
+
+Once all controls pass the "IsValid" rules, page scripts are executed. In scripts the "IsValid" flag and Error Text can be set for any control using *SetValue* actions. 
