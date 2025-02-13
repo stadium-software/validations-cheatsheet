@@ -31,8 +31,8 @@ Full feature set:
 
 1. Custom validation definition using Javascript expressions
 2. Custom error message definition
-3. Programatic error state setting
-4. Programatic error message definition
+3. Programmatic error state setting
+4. Programmatic error message definition
 
 When upgrading a pre- 6.12 application in the 6.12 Stadium Designer, older validations will automatically be upgraded. 
 
@@ -45,7 +45,7 @@ To mark a Control as required, check the "Required" checkbox and enter a validat
 ![](images/PropertiesPanel-Required.png)
 
 # IsValid
-The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to "false" when it fails "IsValid Rule". It can also be set [programatically in scripts](#creating-validations-in-scripts). 
+The "IsValid" property is a boolean flag that defines when Controls are in an error state. This property is "true" by default and is set to "false" when it fails "IsValid Rule". It can also be set [programmatically in scripts](#creating-validations-in-scripts). 
 
 ## IsValid Rule
 The "IsValid Rule" property accepts a Javascript expression. If the Control value passes the expression the IsValid property is true and the Control has passed the validation. If the Control value does not pass the expression the IsValid property is false, the Control is placed in an error state and the error message is displayed under the Control. 
@@ -153,6 +153,6 @@ Sometimes validations need to do things that cannot be accomplished in Javascrip
 
 By default all controls are assumed to be valid and their "IsValid" flag is "true". 
 
-First controls that are referenced in Event Handlers must pass "IsValid" rules. 
+First controls that are referenced in Event Handlers must pass "IsValid" rules. Once all controls pass the "IsValid Rules", page scripts are executed. 
 
-Once all controls pass the "IsValid Rules", page scripts are executed. In scripts the "IsValid" flag and Error Text can be set for any control using *SetValue* actions. If an "IsValid" flag is set to false, the script execution is halted and the error text is shown on the field. 
+In scripts the "IsValid" flag and Error Text can be set for any control using *SetValue* actions. If an "IsValid" flag is set to "false", the script execution is halted and the error text is shown on the field. The "IsValid" flag will then remain "false" until it is set to "true" using a *SetValue* action. 
