@@ -21,7 +21,6 @@ This readme describes how to create validations in Stadium 6.12+.
   - [Number Range](#number-range)
   - [Combining criteria](#combining-criteria)
 - [Script-Based Validations](#script-based-validations)
-  - [Setting The "IsValid" Flag](#setting-the-isvalid-flag)
 
 # Overview
 
@@ -145,12 +144,10 @@ new Date(DatePicker.Date).getFullYear() == 2024 || new Date(DatePicker.Date).get
 
 # Script-Based Validations
 
-Control errors can also be set in scripts. Scripts execute once all controls pass the "IsValid Rules". 
+Validation errors can be triggered in scripts by setting "IsValid" flags and "Error Text" properties using *SetValue* actions. 
 
-## Setting The "IsValid" Flag
+If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will remain "false" until it is set to "true" using another *SetValue* action. 
 
-The "IsValid" flag and "Error Text" property can be set using *SetValue* actions. If an "IsValid" flag is set to "false", the text provided in the "Error Text" property is shown under the field. The "IsValid" flag will remain "false" until it is set to "true" using another *SetValue* action. 
-
-Script executions do **NOT** stop when an "IsValid" flag is set to "false". Data processing may need to be done only if all controls pass all validations
+Scripts execute once all controls pass the "IsValid Rules". Script executions do **NOT** stop when an "IsValid" flag is set to "false". Data processing may need to be done only if all controls pass all validations
 
 ![](images/ValidationDecision.png)
