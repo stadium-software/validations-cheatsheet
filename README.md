@@ -67,6 +67,7 @@ To use these examples, adjust the Control name ("TextBox" in this example) and c
 ### IsNumber
 ```javascript
 /^\d+$/.test(TextBox.Text)
+Number.isInteger(TextBox.Text)
 ```
 
 ### IsURL
